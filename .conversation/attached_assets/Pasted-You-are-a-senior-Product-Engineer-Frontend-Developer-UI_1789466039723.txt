@@ -1,0 +1,93 @@
+You are a senior Product Engineer / Frontend Developer / UI UX Designer.
+
+Please construct and update the codebase directly in this Replit project according to the following specification for the "취업 준비 올인원 대시보드 (Job Search All-in-One Dashboard)" MVP.
+
+Do NOT provide code snippets or general advice. Create/modify the necessary source files and start the application directly.
+
+---
+
+### 1. Project Specifications & Requirements
+
+#### Tech Stack & Constraints
+- Pure Static Frontend Web App (React + JavaScript / TypeScript + Tailwind CSS + `lucide-react`).
+- NO backend, NO database, NO authentication, NO external API calls.
+- All state must be synchronized and persisted using `localStorage` with key: `jobDashboardData`.
+- Must handle JSON parse/read errors gracefully without crashing the application.
+- Initial launch should populate lightweight mock Demo Data if `localStorage` is empty.
+
+#### Data Model Schema (`DashboardData`)
+```json
+{
+  "goal": {
+    "title": "2026 상반기 IT 직무 취업",
+    "position": "데이터 분석가",
+    "targetDate": "2026-12-10"
+  },
+  "companies": [
+    {
+      "id": "demo-1",
+      "name": "NAVER",
+      "position": "데이터 분석가",
+      "deadline": "2026-10-05",
+      "status": "submitted",
+      "coverLetterProgress": 75,
+      "interviewDate": "2026-10-12 14:00"
+    },
+    {
+      "id": "demo-2",
+      "name": "삼성전자",
+      "position": "데이터 분석",
+      "deadline": "2026-11-01",
+      "status": "passed",
+      "coverLetterProgress": 100
+    },
+    {
+      "id": "demo-3",
+      "name": "카카오",
+      "position": "Data Analyst",
+      "deadline": "2026-11-15",
+      "status": "preparing",
+      "coverLetterProgress": 30
+    }
+  ],
+  "tasks": [
+    { "id": "t1", "title": "NAVER 자소서 수정", "completed": true, "priority": "high" },
+    { "id": "t2", "title": "SQL 문제 30개", "completed": true, "priority": "medium" },
+    { "id": "t3", "title": "Portfolio README 작성", "completed": false, "priority": "high" },
+    { "id": "t4", "title": "삼성전자 지원서 작성", "completed": false, "priority": "low" }
+  ],
+  "interviews": [
+    {
+      "id": "i1",
+      "companyName": "NAVER",
+      "position": "데이터 분석가",
+      "date": "2026-10-12",
+      "time": "14:00",
+      "type": "기술 면접",
+      "location": "온라인 (Zoom)",
+      "memo": "SQL 및 Portfolio Deep-Dive 준비"
+    }
+  ],
+  "coverLetters": [
+    { "id": "cl1", "title": "지원 동기", "progress": 100, "status": "완료" },
+    { "id": "cl2", "title": "직무 역량", "progress": 75, "status": "진행 중" },
+    { "id": "cl3", "title": "협업 경험", "progress": 25, "status": "진행 중" },
+    { "id": "cl4", "title": "입사 후 포부", "progress": 0, "status": "시작 전" }
+  ],
+  "certificates": [
+    { "id": "cert1", "name": "SQLD", "progress": 100, "status": "취득 완료" },
+    { "id": "cert2", "name": "ADsP", "progress": 50, "examDate": "2026-11-20", "status": "시험 예정" }
+  ],
+  "portfolio": [
+    {
+      "id": "p1",
+      "title": "데이터 분석 프로젝트",
+      "description": "이커머스 이탈률 분석 및 Predictive Model 구축",
+      "progress": 80,
+      "techStack": ["Python", "Pandas", "SQL"],
+      "githubUrl": "[https://github.com](https://github.com)",
+      "demoUrl": "[https://demo.com](https://demo.com)",
+      "status": "진행 중"
+    }
+  ]
+}

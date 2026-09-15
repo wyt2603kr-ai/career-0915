@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "취업 준비 올인원 대시보드"
+description = "A Korean job search dashboard with locally saved goals, companies, tasks, interviews, cover letters, certificates and portfolio projects."
+version = "1.0.0"
+id = "artifacts/job-dashboard"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23561
+
+[services.development]
+run = "pnpm --filter @workspace/job-dashboard run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/job-dashboard", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/job-dashboard/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23561"
+BASE_PATH = "/"
