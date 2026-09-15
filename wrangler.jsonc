@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "career-0915",
+  "compatibility_date": "2026-09-15",
+  "assets": {
+    "directory": "./artifacts/job-dashboard/dist/public",
+    "not_found_handling": "single-page-application"
+  }
+}
